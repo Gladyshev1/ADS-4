@@ -3,8 +3,8 @@
 using namespace std;
 int countPairs1(int* arr, int len, int value) {
 	int count = 0;
-	for (int i = 0; i < len; i++) {
-		for (int j = i + 1; j < len - 1; j++) {
+	for (int i = 0; i < len-1; i++) {
+		for (int j = i + 1; j < len ; j++) {
 			if (arr[i] + arr[j] == value) {
 				count++;
 			}
@@ -17,7 +17,7 @@ int countPairs2(int* arr, int len, int value) {
 	int k = len - 1;
 	int count = 0;
 	int o = 0;
-	for (; arr[k] > value; ) {
+	while( arr[k] > value) {
 		k--;
 
 	}
@@ -28,7 +28,12 @@ int countPairs2(int* arr, int len, int value) {
 				count++;
 
 			}
+
+
 		}
+
+
+
 	}
 	return count;
 }
@@ -51,13 +56,11 @@ int cbinsearch(int* arr, int size, int value) {
 				r++;
 			}
 			break;
-		}
-		else if (value < arr[mid]) {
+		} else if (value < arr[mid]) {
 
 			r = mid - 1;
 
-		}
-		else {
+		} else {
 			l = mid + 1;
 		}
 	}
