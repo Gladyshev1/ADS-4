@@ -1,6 +1,5 @@
 // Copyright 2021 NNTU-CS
-#include <iostream>
-using namespace std;
+
 int countPairs1(int* arr, int len, int value) {
     int count = 0;
     for (int i = 0; i < len - 1; i++) {
@@ -21,19 +20,12 @@ int countPairs2(int* arr, int len, int value) {
         k--;
 
     }
-
     for (int i = 0; i < len - 1; i++) {
         for (; k > i; k--) {
             if (arr[i] + arr[k] == value) {
                 count++;
-
             }
-
-
         }
-
-
-
     }
     return count;
 }
@@ -57,16 +49,13 @@ int cbinsearch(int* arr, int size, int value) {
             }
             break;
         } else if (value < arr[mid]) {
-
             r = mid - 1;
-
         } else {
             l = mid + 1;
         }
     }
     return count;
 }
-
 int countPairs3(int* arr, int len, int value) {
     int count = 0;
     for (int i = 0; i < len; i++) {
