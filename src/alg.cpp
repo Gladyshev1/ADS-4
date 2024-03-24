@@ -44,25 +44,25 @@ int cbinsearch(int* arr, int size, int value) {
 	while (l <= r) {
 		int mid = l + (r - l) / 2;
 		if (arr[mid] == value) {
-			count++;
-			l = mid - 1;
-			r = mid + 1;
-			while (l >= 0 && arr[l] == value) {
-				count++;
-				l--;
-			}
-			while (r < size && arr[r] == value) {
-				count++;
-				r++;
-			}
-			break;
-		} else if (value < arr[mid]) {
+		 count++;
+		 l = mid - 1;
+		 r = mid + 1;
+		 while (l >= 0 && arr[l] == value) {
+			 count++;
+			 l--;
+		 }
+		 while (r < size && arr[r] == value) {
+			 count++;
+			 r++;
+		 }
+		 break;
+	 } else if (value < arr[mid]) {
 
-			r = mid - 1;
+		 r = mid - 1;
 
-		} else {
-			l = mid + 1;
-		}
+	 } else {
+		 l = mid + 1;
+	 }
 	}
 	return count;
 }
